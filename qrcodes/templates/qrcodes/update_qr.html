@@ -1,0 +1,18 @@
+<!-- qrcodes/templates/qrcodes/update_qr.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Aggiorna QR Code</title>
+</head>
+<body>
+    <h1>Aggiorna il contenuto del QR Code</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="content">Carica nuovo contenuto:</label>
+        <input type="file" name="content" id="content" required>
+        <button type="submit">Salva</button>
+    </form>
+    <p>Codice di sicurezza: {{ qr_code.security_code }}</p>
+    <p>Segnati questo codice, servirà per modificare il contenuto in futuro.</p>
+</body>
+</html>

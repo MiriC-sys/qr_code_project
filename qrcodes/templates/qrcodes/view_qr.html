@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Visualizza Contenuto</title>
+</head>
+<body>
+    <h1>Visualizza Contenuto</h1>
+    <p><a href="{{ qr_code.file_url }}">Visualizza il contenuto</a></p>
+    <form method="post">
+        {% csrf_token %}
+        <label for="security_code">Inserisci il codice di sicurezza per modificare il contenuto:</label>
+        <input type="text" name="security_code" id="security_code">
+        <button type="submit">Verifica</button>
+    </form>
+</body>
+</html>

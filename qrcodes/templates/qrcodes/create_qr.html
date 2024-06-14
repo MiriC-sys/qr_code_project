@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crea QR Code</title>
+</head>
+<body>
+    <h1>Crea un nuovo QR Code</h1>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Genera QR Code</button>
+    </form>
+    {% if qr_code_image %}
+        <h2>QR Code Generato:</h2>
+        <img src="data:image/png;base64,{{ qr_code_image }}" alt="QR Code">
+        <h3>Il tuo codice di sicurezza: {{ security_code }}</h3>
+        <p>Segnati questo codice di sicurezza, è necessario per aggiornare il contenuto del QR Code.</p>
+    {% endif %}
+</body>
+</html>

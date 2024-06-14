@@ -1,0 +1,18 @@
+<!-- instructions.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Istruzioni</title>
+</head>
+<body>
+    <h1>Istruzioni per Caricare il Contenuto</h1>
+    <p>Segnati il codice di sicurezza: <strong>{{ qr_code.security_code }}</strong></p>
+    <p>Questa è l'unica occasione per segnarti il codice di sicurezza. Sarà necessario per caricare e modificare il contenuto futuro.</p>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="content">Carica il tuo contenuto (max 5MB):</label>
+        <input type="file" name="content" id="content">
+        <button type="submit">Salva</button>
+    </form>
+</body>
+</html>

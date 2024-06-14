@@ -1,0 +1,18 @@
+<!-- qrcodes/templates/qrcodes/view_content.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Visualizza Contenuto</title>
+</head>
+<body>
+    <h1>Il tuo contenuto caricato</h1>
+    {% if qr_code.file_url %}
+        <img src="{{ qr_code.file_url }}" alt="QR Code Content">
+    {% else %}
+        <p>Nessun contenuto caricato.</p>
+    {% endif %}
+    <form method="get" action="{% url 'update_qr' qr_code.edit_code %}">
+        <button type="submit">Modifica Contenuto</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Operazione Riuscita!</title>
+</head>
+<body>
+    <h1>Operazione Riuscita!</h1>
+    <p>Il contenuto del QR Code è stato aggiornato con successo.</p>
+    <p><a href="{{ qr_code.file_url }}">Visualizza il nuovo contenuto</a></p>
+    <p><a href="{% url 'update_qr' qr_code.edit_code %}">Modifica il contenuto</a></p>
+</body>
+</html>
